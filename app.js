@@ -5,7 +5,7 @@ const port = 3000;
 
 
 app.get('/', async(req, res)=> {
-    res.json("hello world")
+    res.json("hello world!")
 });
 
 // Start the server
