@@ -1,3 +1,5 @@
 #!/bin/bash
+mkdir /home/ec2-user
+
 cd /home/ec2-user
-npm install
+sudo npm i

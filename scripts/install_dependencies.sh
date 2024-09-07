@@ -1,14 +1,13 @@
 #!/bin/bash
-FILE=/home/ec2-user/app/index.js
-if test -f "$FILE"; then
-   echo "$FILE exists"
-   cd /home/ec2-user
-   pm2 stop --silent index.js
-   pm2 delete index.js
-   killall -9 node
-else 
-    echo "$FILE does not exist."
-fi
-cd /home/ec2-user
-sudo rm -rf app
-sudo mkdir app
+sudo apt-get update -y
+
+# Install Node.js using NodeSource repository
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Verify installation of Node.js and npm
+node -v
+npm -v
+
+# Install 'forever' globally
+sudo npm install -g forever
