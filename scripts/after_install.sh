@@ -1,5 +1,4 @@
 #!/bin/bash
-mkdir /home/ec2-user
-
-cd /home/ec2-user
-sudo npm i
+sudo mkdir /home/ec2-user/my-app1
+sudo cd /home/ec2-user/my-app1
+sudo npm install
