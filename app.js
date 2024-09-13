@@ -1,17 +1,23 @@
-const express = require("express");
+const http = require('http');
 
-const app = express();
-app.use(express.json());
+const requestHandler = (req, res) => {
+  if (req.method === 'GET' && req.url === '/') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ message: 'Hello, World!' }));
+  } else if (req.method === 'POST' && req.url === '/echo') {
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk;
+    });
+    req.on('end', () => {
+      const { message } = JSON.parse(body);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ message }));
+    });
+  } else {
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ message: 'Not Found' }));
+  }
+};
 
-
-app.get('/', (req, res) => {
-    res.status(200).send({ message: 'Hello, World!' });
-});
-
-
-app.post('/echo', (req, res) => {
-    const { message } = req.body;
-    res.status(200).send({ message });
-});
-
-module.exports = app;
+module.exports = http.createServer(requestHandler);

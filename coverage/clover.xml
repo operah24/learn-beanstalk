@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1724598521667" clover="3.2.0">
-  <project timestamp="1724598521667" name="All files">
-    <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1" elements="11" coveredelements="8" complexity="0" loc="9" ncloc="9" packages="1" files="1" classes="1"/>
+<coverage generated="1726256319644" clover="3.2.0">
+  <project timestamp="1726256319645" name="All files">
+    <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3" elements="27" coveredelements="27" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
     <file name="app.js" path="/Users/opeyemibantale/Documents/task/learn-beanstalk/app.js">
-      <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
       <line num="1" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
+      <line num="4" count="3" type="cond" truecount="4" falsecount="0"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="2" type="cond" truecount="4" falsecount="0"/>
       <line num="8" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="12" count="0" type="stmt"/>
-      <line num="13" count="0" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
