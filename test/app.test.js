@@ -1,20 +1,27 @@
 const request = require('supertest');
 const app = require('../app');
 
-describe('GET /', () => {
-  it('should return a welcome message', async () => {
-    const res = await request(app).get('/');
-    expect(res.statusCode).toEqual(200);
-    expect(res.body).toHaveProperty('message', 'Hello, World!');
+describe('Node.js HTTP Server', () => {
+  
+  it('GET / should return Hello, World!', async () => {
+    const response = await request(app).get('/');
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toEqual({ message: 'Hello, World!' });
   });
-});
 
-describe('POST /echo', () => {
-  it('should echo the message sent in the request', async () => {
-    const res = await request(app)
+  it('POST /echo should return the echoed message', async () => {
+    const message = { message: 'This is a test' };
+    const response = await request(app)
       .post('/echo')
-      .send({ message: 'Hello, Jest!' });
-    expect(res.statusCode).toEqual(200);
-    expect(res.body).toHaveProperty('message', 'Hello, Jest!');
+      .send(message)
+      .set('Content-Type', 'application/json');
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toEqual(message);
+  });
+
+  it('should return 404 for unknown routes', async () => {
+    const response = await request(app).get('/unknown');
+    expect(response.statusCode).toBe(404);
+    expect(response.body).toEqual({ message: 'Not Found' });
   });
 });
